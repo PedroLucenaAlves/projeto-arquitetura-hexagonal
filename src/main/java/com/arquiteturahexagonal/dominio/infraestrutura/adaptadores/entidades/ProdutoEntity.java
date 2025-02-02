@@ -28,6 +28,7 @@ import java.util.UUID;
         }
 
         public ProdutoEntity(Produto produto) {
+            this.codigo = produto.getCodigo();
             this.sku = produto.getSku();
             this.nome = produto.getNome();
             this.preco = produto.getPreco();

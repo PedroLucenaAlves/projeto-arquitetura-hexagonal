@@ -50,4 +50,14 @@ public class ProdutoRepositoryAdapter implements ProdutoRepositoryPort {
         this.springProdutoRepository.save(produtoEntity);
 
     }
+
+    @Override
+    public void deletar(Produto produto){
+
+        ProdutoEntity produtoEntity = new ProdutoEntity(produto);
+
+        this.springProdutoRepository.delete(produtoEntity);
+
+    }
+
 }

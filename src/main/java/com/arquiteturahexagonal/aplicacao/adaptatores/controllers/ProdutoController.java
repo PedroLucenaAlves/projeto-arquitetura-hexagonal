@@ -35,5 +35,13 @@ public class ProdutoController {
     @PutMapping(value = "/{sku}")
     void atualizarEstoque(@PathVariable String sku, @RequestBody EstoqueDTO estoqueDTO) throws ChangeSetPersister.NotFoundException {
         System.out.println("Recebido no Controller: " + estoqueDTO.getQuantidade());
+        produtoServicePort.atualizarEstoque(sku, estoqueDTO);
     }
+
+    @DeleteMapping(value = "/{sku}")
+    void excluirEstoque(@PathVariable String sku) throws ChangeSetPersister.NotFoundException {
+        System.out.println("Excluindo estoque");
+        produtoServicePort.excluirEstoque(sku);
+    }
+
 }

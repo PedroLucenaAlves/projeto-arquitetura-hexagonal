@@ -50,5 +50,16 @@ public class PedidoServiceImpl implements ProdutoServicePort {
             this.produtoRepository.salvar(produto);
         }
 
+        @Override
+    public void excluirEstoque(String sku) throws ChangeSetPersister.NotFoundException{
+            Produto produto = this.produtoRepository.buscarPeloSku(sku);
+
+            if(Objects.isNull(produto)){
+                throw new ChangeSetPersister.NotFoundException();
+            }
+
+            this.produtoRepository.deletar(produto);
+        }
+
 }
 

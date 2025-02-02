@@ -16,4 +16,6 @@ public interface ProdutoRepositoryPort {
 
     void salvar(Produto produto);
 
+    void deletar(Produto produto);
+
 }

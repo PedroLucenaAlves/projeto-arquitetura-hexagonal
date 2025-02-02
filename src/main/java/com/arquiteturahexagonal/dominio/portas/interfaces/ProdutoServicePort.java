@@ -18,4 +18,6 @@ public interface ProdutoServicePort {
 
     void atualizarEstoque(String sku, EstoqueDTO estoqueDTO) throws ChangeSetPersister.NotFoundException;
 
+    void excluirEstoque(String sku) throws ChangeSetPersister.NotFoundException;
+
 }
